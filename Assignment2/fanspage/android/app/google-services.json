@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "799396031913",
+    "project_id": "fan-page-aiftikhar2",
+    "storage_bucket": "fan-page-aiftikhar2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799396031913:android:92fb4c175cbb9763c128b8",
+        "android_client_info": {
+          "package_name": "com.socialServices.fanspage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799396031913-36qg53hdf943910onl1q6i2iftgk7p4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC58nDePoAmuN9c-Y0KFV3bN_ULgTF86UU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799396031913-36qg53hdf943910onl1q6i2iftgk7p4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
