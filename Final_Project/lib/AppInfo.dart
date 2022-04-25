@@ -13,9 +13,9 @@ class _AboutUs extends State<AppInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About Us"),
+        title: const Text("About Us", style: TextStyle(fontSize: 20,),),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, size: 25),
           tooltip: 'go back',
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(

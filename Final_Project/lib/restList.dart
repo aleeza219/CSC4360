@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant/detailPage.dart';
 import 'package:restaurant/restaurant.dart';
 import 'package:restaurant/main.dart';
 
 class restList extends StatefulWidget {
   String name;
   String address;
-  String image;
+  Image image;
   int likes;
   int dislikes;
   int shares;
   int miles;
+  restaurant res;
   restList(
       {Key? key,
       required this.name,
@@ -18,7 +20,8 @@ class restList extends StatefulWidget {
       required this.likes,
       required this.dislikes,
       required this.shares,
-      required this.miles})
+      required this.miles,
+      required this.res})
       : super(key: key);
 
   @override
@@ -26,18 +29,18 @@ class restList extends StatefulWidget {
 }
 
 class _fullList extends State<restList> {
+  //late restaurant Res;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       // To tap on each individual restaurant from list**/
-      //onTap:()
-      //async {
-      //   createChatUser().getmsgstemp(user);
-      //   await Future.delayed(const Duration(seconds: 1));
-      //   Navigator.push(context, MaterialPageRoute(builder: (context){
-      //     return ChatDetailPage(user: user,);
-      //   }));
-      // },
+      onTap:()
+      async {
+        await Future.delayed(const Duration(seconds: 1));
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return detailPage(Res: this.widget.res);
+        }));
+      },
       child: Container(
         padding:
             const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
@@ -47,7 +50,7 @@ class _fullList extends State<restList> {
               child: Row(
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundImage: NetworkImage(widget.image),
+                    backgroundImage: NetworkImage(widget.image.toString()),
                     maxRadius: 30,
                   ),
                   const SizedBox(
@@ -104,7 +107,7 @@ class _fullList extends State<restList> {
               ),
             ),
             Text(
-              widget.miles.toString() + "mi",
+              widget.miles.toString() + " mi",
               style: const TextStyle(
                 fontSize: 12,
               ),

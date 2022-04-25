@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 import 'package:restaurant/AppInfo.dart';
+import 'package:restaurant/Settings.dart';
 import 'package:restaurant/searchResults.dart';
 
 void main() {
@@ -37,23 +38,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title, style: const TextStyle(fontSize: 25,),),
         leading: IconButton(
-          icon: const Icon(Icons.restaurant),
+          icon: const Icon(Icons.restaurant, size: 40,),
           tooltip: 'logo',
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const MyHomePage(title: "Finders")));
-          },
+          onPressed: () {},
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.menu),
+            icon: const Icon(Icons.menu, size: 40),
+            padding: const EdgeInsets.only(right: 7),
             tooltip: 'profile',
             onPressed: () {
               // To show profile page of current user from firebase**/
               //   Navigator.of(context).push(MaterialPageRoute(
               //       builder: (context) => const showProfile(user: createChatUser().getcurrentuser(),)));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const settings()));
             },
           )
         ],
@@ -127,6 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const searchResults()));
+                  //if search not found
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //    builder: (context) =>  FunPage()));
                 },
                 child: const Text("SEARCH")),
           ],
@@ -137,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
             .push(MaterialPageRoute(builder: (context) => const AppInfo()))),
         tooltip: 'About us',
         child: const Icon(Icons.chat),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), 
     );
   }
 }
